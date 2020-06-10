@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import albumData from './../data/Album';
+import albumData from './../data/albums';
 
 class Library extends Component {
 
@@ -17,7 +17,7 @@ class Library extends Component {
                             <img src={album.albumCover} alt={album.title} />
                             <div>{album.title}</div>
                             <div>{album.artist}</div>
-                            <div>{album.songs.length}</div>
+                            <div>{album.songs.length} songs</div>
                         </Link>
                     )
                 }
