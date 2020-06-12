@@ -1,0 +1,99 @@
+.album {
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  #album-info {
+    width: 30%;
+    float: left;
+    margin-left: 130px;
+  }
+  
+  #song-list {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  #music-info {
+    float: left;
+    width: 50%;
+  }
+  
+  #album-cover-art {
+    box-shadow: 10px 10px 10px black;
+    width: 50%;
+  }
+  
+  .album-details {
+    text-align: left;
+    margin-left: 118px;
+  }
+  
+  #album-title {
+    font-size: 30px;
+  }
+  
+  .artist {
+    font-size: 18px;
+  }
+  
+  .player-bar {
+    width: 100%;
+  }
+  
+  .seek-bar-top {
+    width: 70%;
+  }
+  
+  .seek-bar-bottom {
+    width: 50%;
+  }
+  
+  .song-button {
+    width: 50px;
+    padding: 10px 0 10px;
+    margin: auto;
+  }
+  
+  .song-number {
+    font-weight: bold;
+  }
+  
+  #time-control {
+    margin-top: 10px;
+  }
+  
+  .current-time {
+    font-size: 20px;
+  }
+  
+  .song-title {
+    font-size: 20px;
+  }
+  
+  .song-duration {
+    font-size: 20px;
+  }
+  
+  #previous, #play-pause, #next {
+    width: 40px;
+    padding: 10px 0 10px;
+    margin: 0 5px 0 5px;
+  }
+  
+  .total-time {
+    font-size: 20px;
+  }
+  
+  .ion-volume-low, .ion-volume-high {
+    font-size: 20px;
+  }
+  
+  .search-background {
+    background-color: aquamarine;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+  

@@ -1,29 +1,134 @@
-a {
-  font-size: 20px;
-  color: #da6d99;
-  text-decoration: none;
-  font-family: 'Raleway', sans-serif;
-  padding: 45px;
-}
-
-a:hover {
-  color: white;
-}
-
-header {
-  display: block;
-  padding-top: 10px;
+.App {
   text-align: center;
+  margin-bottom: 0px;
+}
+
+h1 {
+  color: white;
+  font-size: 75px;
 }
 
 nav {
-  display: block;
+  font-size: 20px;
+  text-align: right;
+  word-spacing: 10em;
+  padding: 10px;
+  margin: 0px 0px 20px 20px;
+  margin-right: 150px;
 }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.nav-style {
+  text-decoration: none;
+  margin: 20px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav-style:hover {
+  color: rgb(122, 65, 160);
+}
+
+.top-hero-title {
+  font-size: 45px;
+}
+
+
+.App-title {
+  font-size: 1.5em;
+}
+
+
+/* ------- Screens smaller than 768px width ---------- */
+
+@media (max-width: 767px) {
+
+  .nav {
+    display: none;
+  }
+
+  .hero-title {
+    display: none;
+  }
+
+  .landing {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  #float-left-top {
+    float: none;
+    margin: 0px;
+    border-top: solid black;
+    border-bottom: solid black;
+  }
+
+  #float-right {
+    float: none;
+    margin: 0px;
+    border-bottom: solid black;
+  }
+
+  #float-left-bottom {
+    float: none;
+    margin: 0px;
+    border-bottom: solid black;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .album-item {
+    width: 100%;
+  }
+
+  .img-left {
+    width: 40%;
+    float: left;
+  }
+
+  .album-info-float {
+    width: 40%;
+    float: left;
+  }
+
+  .album-clear {
+    clear: both;
+  }
+}
+
+/* ------- Screens smaller than 1024px width ---------- */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .feature {
+    width: 30%;
+    height: 100%;
+  }
+
+  #float-left-top {
+    float: left;
+  }
+
+  #float-right {
+    float: left;
+  }
+
+  #float-left-bottom {
+    clear: none;
+    float: left;
+  }
+
+  .clear-footer {
+    clear: both;
+  }
+
+  .footer {
+    width: 100%;
+  }
 }

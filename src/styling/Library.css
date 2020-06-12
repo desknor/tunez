@@ -1,0 +1,34 @@
+.library {
+    width: 100%;
+    height: 100%;
+  }
+  
+  img {
+    max-width: 50%;
+  }
+  
+  .float-album-left {
+    float: left;
+    margin-top: 20px;
+    margin-left: 150px;
+  }
+  
+  .float-album-right {
+    float: left;
+    margin-top: 20px;
+  }
+  
+  .album-title, .album-artist, .album-songs {
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    margin-left: 118px;
+  }
+  
+  .album-title {
+    font-size: 30px;
+  }
+  
+  .album-artist, .album-songs {
+    font-size: 18px;
+  }

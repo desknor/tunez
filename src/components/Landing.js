@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../styling/Landing.css';
+
 const Landing = () => (
     <section className="landing">
         <h1 className="hero-title">Turn that music up!</h1>

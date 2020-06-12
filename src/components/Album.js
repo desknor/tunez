@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
+import './../styling/Album.css';
+
 class Album extends Component {
     constructor(props) {
         super(props);
@@ -15,14 +17,14 @@ class Album extends Component {
             currentSong: album.songs[0],
             currentTime: 0,
             duration: album.songs[0].duration,
+            currentVolume: 0.3,
             isPlaying: false,
-            volume: 0.5,
             ishovered: false
         };
 
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
-        this.audioElement.volume = 0.5;
+        this.audioElement.volume = this.state.currentVolume;
     }
 
     componentDidMount() {
@@ -103,7 +105,7 @@ class Album extends Component {
     handleVolumeChange(e) {
         const newVolume = e.target.value;
         this.audioElement.volume = newVolume;
-        this.setState({ volume: newVolume });
+        this.setState({ currentVolume: newVolume });
     }
 
     renderButton(song, index) {
@@ -140,16 +142,15 @@ class Album extends Component {
 
     render() {
         return (
-    <section className="album">
-        <section id="album-info">
-            <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+        <section className="album">
+            <section id="album-info">
+                <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
             <div className="album-details">
-                <div id="album-title">{this.state.album.title}</div>
-                <div className="artist">{this.state.album.artist}</div>
+                <h1 id="album-title">{this.state.album.title}</h1>
+                <h2 className="artist">{this.state.album.artist}</h2>
                 <div id="release-info">{this.state.album.releaseInfo}</div>
             </div>
         </section>
-
         <table id="song-list" align="center" className="table">
             <colgroup>
                 <col id="song-number-column" />
@@ -163,23 +164,23 @@ class Album extends Component {
                     <th>Duration</th>
                 </tr>
                 {
-                    this.state.album.songs.map((song, index) =>
-                    <tr
-                        className="song"
-                        key={index}
-                        onClick={() => this.handleSongClick(song)} 
-                        onMouseEnter={() => this.setState({ isHovered: index + 1 })}
-                        onMouseLeave={() => this.setState({ isHovered: false })}>
-                            <td className="song-actions">
-                            <button id="song-action-buttons" className="btn btn-light">
-                                {this.state.currentSong.title === song.title ?
-								    (<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
-									this.state.isHovered === index + 1 ? (<span className="ion-play" />) :
-									(<span className="song-number">{index + 1}</span>)}
-                            </button>
-                            </td>
-                            <td className="song-title">{song.title}</td>
-                            <td className="song-duration">{this.formatTime(song.duration)}</td>   
+            this.state.album.songs.map((song, index) =>
+                <tr
+                    className="song"
+                    key={index}
+                    onClick={() => this.handleSongClick(song)} 
+                    onMouseEnter={() => this.setState({ isHovered: index + 1 })}
+                    onMouseLeave={() => this.setState({ isHovered: false })}>
+                <td className="song-actions">
+                <button id="song-action-buttons" className="btn btn-light">
+                    {this.state.currentSong.title === song.title ?
+						(<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
+						    this.state.isHovered === index + 1 ? (<span className="ion-play" />) :
+						(<span className="song-number">{index + 1}</span>)}
+                </button>
+                </td>
+                <td className="song-title">{song.title}</td>
+                <td className="song-duration">{this.formatTime(song.duration)}</td>   
                     </tr>
                   )
                 }
@@ -198,9 +199,9 @@ class Album extends Component {
             handleVolumeChange={(e) => this.handleVolumeChange(e)}
             formatTime={(time) => this.formatTime(time)}
             />
-    </section>
+        </section>
 
-      )
+      );
    }
 }
 
